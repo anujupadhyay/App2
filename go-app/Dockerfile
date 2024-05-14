@@ -2,7 +2,7 @@
 FROM golang:1.21 as builder
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /apps
 
 # Copy your Go source code to the container
 COPY . .
@@ -14,7 +14,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o server
 FROM alpine:latest
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /apps
 
 # Copy the binary from the builder stage
 COPY --from=builder /app/server .
