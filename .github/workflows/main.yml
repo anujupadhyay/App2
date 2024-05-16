@@ -23,7 +23,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: devopshint/go-app:${{ github.sha }} , devopshint/go-app:latest
+        tags: anujupadhyay/poc:${{ github.sha }} , anujupadhyay/poc:latest
 
   update:
     name: Update Helm Manifests
